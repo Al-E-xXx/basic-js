@@ -19,3 +19,13 @@ function getSeason(/* date */) {
 module.exports = {
   getSeason
 };
+
+// try {
+//   // Выполняете тут код, если он выдаст ошибку, то выполнятся будет код в catch
+//   date.toLocalString(); // если код выдаст ошибку, то выполнится логика в catch блоке 
+// }
+// catch(e) {
+//   // 
+//   if (e) throw new Error('Invalide date!') // Если в (e) у нас есть ошибка, то выполнится throw new Error
+// } 
+
