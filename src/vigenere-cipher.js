@@ -71,7 +71,7 @@ class VigenereCipheringMachine {
 
     if (this.reverse) {
       resultArr.reverse();
-    };
+    }
     
     return resultArr.join('');
   }
@@ -124,7 +124,7 @@ class VigenereCipheringMachine {
 
     if (this.reverse) {
       resultArr.reverse();
-    };
+    }
     
     return resultArr.join('');
   }

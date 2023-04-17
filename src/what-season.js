@@ -10,22 +10,32 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  * getSeason(new Date(2020, 02, 31)) => 'spring'
  * 
+ * Seasons:
+ * spring, summer, autumn (fall), winter
  */
-function getSeason(/* date */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+
+
+function getSeason(date) {
+  if (!date) {
+    return 'Unable to determine the time of year!';
+  }
+
+  try {
+    date.getUTCSeconds()
+  } catch { 
+    throw new Error('Invalid date!')
+  };
+
+  const m = date.getMonth();
+  
+  if (m === 11 || m <= 1) return 'winter';
+  if (m > 1 && m <= 4) return 'spring';
+  if (m > 4 && m <= 7) return 'summer';
+  if (m > 7 && m <= 10) return 'autumn';
 }
+
+console.log(getSeason(new Date(2020, 02, 31))); // 'spring'
 
 module.exports = {
   getSeason
 };
-
-// try {
-//   // Выполняете тут код, если он выдаст ошибку, то выполнятся будет код в catch
-//   date.toLocalString(); // если код выдаст ошибку, то выполнится логика в catch блоке 
-// }
-// catch(e) {
-//   // 
-//   if (e) throw new Error('Invalide date!') // Если в (e) у нас есть ошибка, то выполнится throw new Error
-// } 
-
