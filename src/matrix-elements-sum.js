@@ -1,4 +1,4 @@
-const { NotImplementedError } = require('../lib');
+const { NotImplementedError } = require("../lib");
 
 /**
  * Given matrix, a rectangular matrix of integers,
@@ -16,11 +16,26 @@ const { NotImplementedError } = require('../lib');
  *
  * The result should be 9
  */
-function getMatrixElementsSum(/* matrix */) {
-  // Remove line below and write your code here
-  throw new NotImplementedError('Not implemented');
+
+function getMatrixElementsSum(matrix) {
+  let summ = 0;
+
+  for (let y = 0; y < matrix.length; y++) {
+    for (let x = 0; x < matrix[y].length; x++) {
+      if (y > 0) {
+        if (matrix[y - 1][x] !== 0) {
+          summ = summ + matrix[y][x];
+        }
+      }
+      if (y === 0) {
+        summ = summ + matrix[y][x];
+      }
+    }
+  }
+
+  return summ;
 }
 
 module.exports = {
-  getMatrixElementsSum
+  getMatrixElementsSum,
 };
